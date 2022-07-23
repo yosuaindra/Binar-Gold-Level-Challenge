@@ -1,0 +1,32 @@
+header{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    background-color: #F1F3FF;
+    .wrapper{
+        height: 70px;
+        .logo{
+            width: 100px;
+            height: 34px;
+            background-color: #0D28A6;
+        }
+        nav{
+            a{
+                margin-right: 32px;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                color: black;
+            }
+        }
+        .hamburger-menu{
+            width: 22px;
+            height: 18px;
+            span{
+                width: 22px;
+                height: 2px;
+                background-color: #222222;
+            }
+        }
+    }
+}

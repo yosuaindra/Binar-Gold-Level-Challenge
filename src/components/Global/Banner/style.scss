@@ -1,0 +1,56 @@
+section#banner{
+    min-height: 500px;
+    background-color: #F1F3FF;
+    .wrapper{
+        height: 500px;
+        @media (max-width: 991.98px) {
+            height: 500px;
+            margin-top: 100px;
+        }
+        @media (max-width: 767.98px) {
+            height: 550px;
+            margin-top: 100px;
+        }
+        h1, p{
+            color: black;
+            font-weight: 700;
+        }
+        h1{
+            font-size: 36px;
+            line-height: 150%;
+        }
+        p{
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .btn{
+            background: #5CB85F;
+            border-radius: 2px;
+            padding: 8px 12px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+            color: white;
+            border: none;
+        }
+    }
+    .hero-img{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        height: 100%;
+        background: url(https://cdn.discordapp.com/attachments/986612883859341333/996649671252529192/unknown.png) no-repeat;
+        background-size: 95%;
+        background-position: right 0 bottom 0;
+        @media (max-width: 991.98px) {
+            width: 100%;
+            background-size: 60%;
+        }
+        @media (max-width: 767.98px) {
+            width: 100%;
+            background-size: 95%;
+        }
+    }
+}
