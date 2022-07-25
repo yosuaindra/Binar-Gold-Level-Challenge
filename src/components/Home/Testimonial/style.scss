@@ -20,6 +20,16 @@ section#testimonial{
     }
     .wrapper-slider{
         .slick-initialized{
+            width: 140%;
+            margin-left: -20%;
+            @media (max-width: 991.98px) {
+                width: 100%;
+                margin-left: 0;
+            }
+            @media (max-width: 767.98px) {
+                width: 100%;
+                margin-left: 0;
+            }
             .slick-slide{
                 padding: 12px;
             }
@@ -90,7 +100,8 @@ section#testimonial{
             gap: 24px;
             margin-top: 24px;
             @media (max-width: 767.98px) {
-                margin-top: -10px;
+                position: relative;
+                margin-top: -28px;
                 z-index: 1;
             }
             span{
