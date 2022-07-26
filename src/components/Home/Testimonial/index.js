@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const Testimonial = () => {
+const Testimonial = ({testimonial}) => {
     const slider = React.useRef();
     
     const settings = {
@@ -38,6 +38,15 @@ const Testimonial = () => {
         ]
     };
 
+    const showRating = (param) =>{
+        const star = [];
+        for(let a=1; a<=param; a++){
+            star.push(<span className='fa fa-star checked'></span>);
+        }
+
+        return star;
+    }
+
     return (
         <section id='testimonial'>
             <Container fluid className='p-0'>
@@ -50,70 +59,22 @@ const Testimonial = () => {
                     </div>
                     <div className='wrapper-slider'>
                             <Slider ref={slider} {...settings}>
-                                <Card>
-                                    <div className='image col-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center'>
-                                        <img src='https://cdn.discordapp.com/attachments/986612883859341333/997421101493780590/unknown.png' alt='testimonial' />
-                                    </div>
-                                    <div className='desc col-12 col-md-8 col-lg-8 d-flex justify-content-center'>
-                                        <div className='rating'>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                        </div>
-                                        <h3>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod&rdquo;</h3>
-                                        <p>John Dee 32, Bromo</p>
-                                    </div>
-                                </Card>
-                                <Card>
-                                    <div className='image col-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center'>
-                                        <img src='https://cdn.discordapp.com/attachments/986612883859341333/997421148054753320/unknown.png' alt='testimonial' />
-                                    </div>
-                                    <div className='desc col-12 col-md-8 col-lg-8 d-flex justify-content-center'>
-                                        <div className='rating'>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                        </div>
-                                        <h3>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod&rdquo;</h3>
-                                        <p>John Dee 32, Bromo</p>
-                                    </div>
-                                </Card>
-                                <Card>
-                                    <div className='image col-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center'>
-                                        <img src='https://cdn.discordapp.com/attachments/986612883859341333/997421101493780590/unknown.png' alt='testimonial' />
-                                    </div>
-                                    <div className='desc col-12 col-md-8 col-lg-8 d-flex justify-content-center'>
-                                        <div className='rating'>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                        </div>
-                                        <h3>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod&rdquo;</h3>
-                                        <p>John Dee 32, Bromo</p>
-                                    </div>
-                                </Card>
-                                <Card>
-                                    <div className='image col-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center'>
-                                        <img src='https://cdn.discordapp.com/attachments/986612883859341333/997421148054753320/unknown.png' alt='testimonial' />
-                                    </div>
-                                    <div className='desc col-12 col-md-8 col-lg-8 d-flex justify-content-center'>
-                                        <div className='rating'>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                            <span className='fa fa-star checked'></span>
-                                        </div>
-                                        <h3>&ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod&rdquo;</h3>
-                                        <p>John Dee 32, Bromo</p>
-                                    </div>
-                                </Card>
+                                {
+                                    testimonial.map((item) => (
+                                        <Card>
+                                            <div className='image col-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center'>
+                                                <img src={item.user.avatar} alt='testimonial' />
+                                            </div>
+                                            <div className='desc col-12 col-md-8 col-lg-8 d-flex justify-content-center'>
+                                                <div className='rating'>
+                                                    {showRating(item.rating)}
+                                                </div>
+                                                <h3>&ldquo;{item.testimonial}&rdquo;</h3>
+                                                <p>{item.user.name} {item.user.age}, {item.user.address}</p>
+                                            </div>
+                                        </Card>
+                                    ))
+                                }
                             </Slider>
                             
                             <div className='nav-slider d-flex justify-content-center'>

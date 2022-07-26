@@ -6,13 +6,14 @@ import WhyUs from '../../components/Home/WhyUs';
 import Testimonial from '../../components/Home/Testimonial';
 import Marketing from '../../components/Home/Marketing';
 import FAQ from '../../components/Home/FAQ';
-import { navList, serviceList, cardWhyUs } from '../../const/staticData';
+import { navList, serviceList, cardWhyUs, testimonial } from '../../const/staticData';
 
 const Home = () => {
     const props = {
         navList,
         serviceList,
-        cardWhyUs
+        cardWhyUs,
+        testimonial
     }
 
     return (
@@ -21,7 +22,7 @@ const Home = () => {
             <Banner />
             <OurServices {...props} />
             <WhyUs {...props} />
-            <Testimonial />
+            <Testimonial {...props} />
             <Marketing />
             <FAQ />
             <Footer />

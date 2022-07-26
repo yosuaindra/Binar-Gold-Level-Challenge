@@ -56,4 +56,48 @@ const cardWhyUs = [
     },
 ];
 
-export{navList, serviceList, cardWhyUs}
+// Component Home - Testimonial
+const testimonial = [
+    {
+        user: {
+            avatar: 'https://cdn.discordapp.com/attachments/986612883859341333/997421101493780590/unknown.png',
+            name: 'John Doe',
+            age: 32,
+            address: 'Bromo'
+        },
+        rating: 5,
+        testimonial: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod`
+    },
+    {
+        user: {
+            avatar: 'https://cdn.discordapp.com/attachments/986612883859341333/997421148054753320/unknown.png',
+            name: 'Jane Doe',
+            age: 20,
+            address: 'Bali'
+        },
+        rating: 5,
+        testimonial: `It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum`
+    },
+    {
+        user: {
+            avatar: 'https://cdn.discordapp.com/attachments/986612883859341333/997421101493780590/unknown.png',
+            name: 'Jimmy Doe',
+            age: 27,
+            address: 'Tangerang'
+        },
+        rating: 4,
+        testimonial: `If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary`
+    },
+    {
+        user: {
+            avatar: 'https://cdn.discordapp.com/attachments/986612883859341333/997421148054753320/unknown.png',
+            name: 'Vallen Doe',
+            age: 22,
+            address: 'Bandung'
+        },
+        rating: 3,
+        testimonial: `If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text`
+    }
+];
+
+export{navList, serviceList, cardWhyUs, testimonial}

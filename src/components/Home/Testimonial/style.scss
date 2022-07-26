@@ -19,6 +19,9 @@ section#testimonial{
         }
     }
     .wrapper-slider{
+        .slick-slider .slick-track, .slick-slider .slick-list {
+            display: flex;
+        }
         .slick-initialized{
             width: 140%;
             margin-left: -20%;
@@ -32,6 +35,9 @@ section#testimonial{
             }
             .slick-slide{
                 padding: 12px;
+                >div{
+                    height: 100%;
+                }
             }
         }
         .card{
@@ -41,6 +47,7 @@ section#testimonial{
             border-radius: 8px;
             padding: 32px 0;
             flex-direction: row;
+            height: 100%;
             cursor: move;
             @media (max-width: 991.98px) {
                 width: 100%;
