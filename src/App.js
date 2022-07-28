@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route, Link } from "react-router-dom";
 import Home from './pages/Home';
-import SearchCar from './pages/SearchCar';
+import Cars from './pages/Cars';
 import DetailCar from './pages/DetailCar';
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/carimobil" element={<SearchCar />} />
+        <Route path="/carimobil" element={<Cars />} />
         <Route path="/detailmobil/:id" element={<DetailCar />} />
       </Routes>
     </>
