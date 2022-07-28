@@ -1,8 +1,8 @@
 import { Container, Row } from 'reactstrap';
 import './style.scss';
-import ButtonCTA from '../../Global/Button';
+import ButtonCTA from '../Button';
 
-const Banner = () => {
+const Banner = ({showCTA}) => {
     return (
         <section id='banner'>
             <Container>
@@ -11,8 +11,7 @@ const Banner = () => {
                         <h1>Sewa & Rental Mobil Terbaik di kawasan Tangerang</h1>
                         <p>Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
                         <div>
-                            {/* <a href='' className='btn btn-success'>Mulai Sewa Mobil</a> */}
-                            <ButtonCTA />
+                            {!!showCTA ? <ButtonCTA /> :''}
                         </div>
                     </div>
                 </Row>

@@ -1,18 +1,63 @@
-import Navbar from '../../components/Global/Navbar';
-import Banner from "../../components/Global/Banner";
-import Footer from "../../components/Global/Footer";
+import Navbar from '../../components/Navbar';
+import Banner from "../../components/Banner";
+import Footer from "../../components/Footer";
 import { navList } from '../../const/staticData';
+import SearchBar from '../../components/SearchBar';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import CardCar from '../../components/CardCar';
+import { Card, Col, Container, Row } from 'reactstrap';
 
 const SearchCar = () => {
+    const [data, setData] = useState([]);
+    const [name, setName] = useState("");
+
+    useEffect(() => {
+        axios.get('https://bootcamp-rent-car.herokuapp.com/admin/car')
+        .then((res) => setData(res.data))
+        .catch((err) => console.log(err));
+    }, []);
+
+    // contoh asynchronous
+    // useEffect(async() => {
+    //     const res = await axios.get('https://bootcamp-rent-car.herokuapp.com/admin/car');
+    //     console.log(res);
+    // });
+
+    const handleChangeName = (e) =>{
+        setName(e.target.value);
+    }
+
+    const handleSearch = () =>{
+        // const payload = {
+        //     name: name
+        // }
+        
+        // axios.post('https://bootcamp-rent-car.herokuapp.com/admin/car', payload)
+        //     .then((res) => console.log(res.data))
+        //     .catch((err) => console.log(err));
+
+        const newArr = data.filter(e => (
+            e.name === name
+        ));
+        
+        setData(newArr);
+        console.log(newArr);
+    }
+
     const props = {
-        navList
+        navList,
+        data,
+        handleChangeName,
+        handleSearch
     }
 
     return (
         <>
             <Navbar {...props} />
             <Banner />
-            <h1>Search Car</h1>
+            <SearchBar {...props} />
+            <CardCar {...props} />
             <Footer />
         </>
     );

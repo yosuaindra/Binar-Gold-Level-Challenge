@@ -1,0 +1,18 @@
+section#searchbar{
+    margin-top: -45px;
+    .search-bar{
+        background: white;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        padding: 10px 25px;
+
+        // button{
+        //     position: absolute;
+        //     bottom: 0;
+        //     margin-bottom: 26px;
+        // }
+        button{
+            margin-top: 32px;
+        }
+    }
+}

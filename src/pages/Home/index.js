@@ -1,25 +1,27 @@
-import Navbar from '../../components/Global/Navbar';
-import Footer from '../../components/Global/Footer';
-import Banner from '../../components/Global/Banner';
-import OurServices from '../../components/Home/OurServices';
-import WhyUs from '../../components/Home/WhyUs';
-import Testimonial from '../../components/Home/Testimonial';
-import Marketing from '../../components/Home/Marketing';
-import FAQ from '../../components/Home/FAQ';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import Banner from '../../components/Banner';
+import OurServices from '../../components/OurServices';
+import WhyUs from '../../components/WhyUs';
+import Testimonial from '../../components/Testimonial';
+import Marketing from '../../components/Marketing';
+import FAQ from '../../components/FAQ';
 import { navList, serviceList, cardWhyUs, testimonial } from '../../const/staticData';
 
 const Home = () => {
+    const showCTA = true;
     const props = {
         navList,
         serviceList,
         cardWhyUs,
-        testimonial
+        testimonial,
+        showCTA
     }
 
     return (
         <>
             <Navbar {...props} />
-            <Banner />
+            <Banner {...props} />
             <OurServices {...props} />
             <WhyUs {...props} />
             <Testimonial {...props} />

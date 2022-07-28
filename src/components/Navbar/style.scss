@@ -12,7 +12,9 @@ header{
         }
         nav{
             a{
-                margin-right: 32px;
+                &:not(:last-child){
+                    margin-right: 32px;
+                }
                 font-weight: 400;
                 font-size: 14px;
                 line-height: 20px;

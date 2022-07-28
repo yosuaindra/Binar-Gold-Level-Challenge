@@ -1,7 +1,7 @@
-import logoThumb from '../components/Home/WhyUs/Images/thumb.svg';
-import logoPriceTag from '../components/Home/WhyUs/Images/pricetag.svg';
-import logoDate from '../components/Home/WhyUs/Images/date.svg';
-import logoBadge from '../components/Home/WhyUs/Images/badge.svg';
+import logoThumb from '../assets/images/thumb.svg';
+import logoPriceTag from '../assets/images/pricetag.svg';
+import logoDate from '../assets/images/date.svg';
+import logoBadge from '../assets/images/badge.svg';
 
 // Global
 const navList = [

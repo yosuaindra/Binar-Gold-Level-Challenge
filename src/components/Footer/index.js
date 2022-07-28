@@ -26,19 +26,19 @@ const Footer = () => {
                             </div>
                             <div className='wrapper-social-media d-flex flex-row'>
                                 <div>
-                                    <i class="fa-brands fa-facebook-f"></i>
+                                    <i className="fa-brands fa-facebook-f"></i>
                                 </div>
                                 <div>
-                                    <i class="fa-brands fa-instagram"></i>
+                                    <i className="fa-brands fa-instagram"></i>
                                 </div>
                                 <div>
-                                    <i class="fa-brands fa-twitter"></i>
+                                    <i className="fa-brands fa-twitter"></i>
                                 </div>
                                 <div>
-                                    <i class="fa-solid fa-envelope"></i>
+                                    <i className="fa-solid fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <i class="fa-brands fa-twitch"></i>
+                                    <i className="fa-brands fa-twitch"></i>
                                 </div>
                             </div>
                         </div>

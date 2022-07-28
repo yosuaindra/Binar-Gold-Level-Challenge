@@ -1,5 +1,5 @@
 import { Container } from 'reactstrap';
-import ButtonCTA from '../../Global/Button';
+import ButtonCTA from '../Button';
 import './style.scss';
 
 const Marketing = () => {
