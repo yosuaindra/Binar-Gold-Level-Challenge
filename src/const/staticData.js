@@ -6,20 +6,20 @@ import logoBadge from '../assets/images/badge.svg';
 // Global
 const navList = [
     {
-    title: 'Our Services',
-    url: '/#ourservices'
+        title: 'Our Services',
+        url: 'ourservices'
     },
     {
-    title: 'Why Us',
-    url: '/#whyus'
+        title: 'Why Us',
+        url: 'whyus'
     },
     {
-    title: 'Testimonial',
-    url: '/#testimonial'
+        title: 'Testimonial',
+        url: 'testimonial'
     },
     {
-    title: 'FAQ',
-    url: '/#faq'
+        title: 'FAQ',
+        url: 'faq'
     }
 ];
 

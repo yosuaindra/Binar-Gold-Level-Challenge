@@ -1,12 +1,9 @@
 import './style.scss';
-import { Container, Row, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { Container, Row, Col, FormGroup, Label, Input, Button } from 'reactstrap';
 
 const SearchBar = (props) => {
     const {handleChangeName, handleSearch} = props;
     
-
     return (
         <section id='searchbar'>
             <Container className="search-bar">

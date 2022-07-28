@@ -1,5 +1,6 @@
 import { Container, Row } from 'reactstrap';
 import './style.scss';
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const Navbar = ({navList}) => {
     return (
@@ -11,7 +12,7 @@ const Navbar = ({navList}) => {
                         <nav className='d-none d-lg-flex justify-content-between'>
                             {
                                 navList.map((item) => (
-                                    <a href={item.url}>{item.title}</a>
+                                    <Link to={item.url} offset={-70}>{item.title}</Link>
                                 ))
                             }
                         </nav>
