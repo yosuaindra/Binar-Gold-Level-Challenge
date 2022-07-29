@@ -10,6 +10,8 @@ import CardCar from '../../components/CardCar';
 const Cars = () => {
     const [data, setData] = useState([]);
     const [name, setName] = useState("");
+    const [status, setStatus] = useState("");
+    const [button, setButton] = useState(false);
 
     useEffect(() => {
         axios.get('https://bootcamp-rent-car.herokuapp.com/admin/car')
@@ -27,6 +29,10 @@ const Cars = () => {
         setName(e.target.value);
     }
 
+    const handleStatus = (e) =>{
+        setStatus(e.target.value);
+    }
+
     const handleSearch = () =>{
         // const payload = {
         //     name: name
@@ -37,18 +43,21 @@ const Cars = () => {
         //     .catch((err) => console.log(err));
 
         const newArr = data.filter(e => (
-            e.name === name
+            e.name === name || e.status === status
         ));
         
         setData(newArr);
-        console.log(newArr);
+        // console.log(newArr);
+        setButton(true);
     }
 
     const props = {
         navList,
         data,
         handleChangeName,
-        handleSearch
+        handleSearch,
+        handleStatus,
+        button
     }
 
     return (

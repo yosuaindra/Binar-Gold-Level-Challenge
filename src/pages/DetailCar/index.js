@@ -10,6 +10,7 @@ import { Card, Col, Container, Row } from 'reactstrap';
 import { useParams } from "react-router-dom";
 
 const DetailCar = () => {
+    const disableForm = true;
     const [car, setCar] = useState({});
 
     const { id } = useParams();
@@ -21,14 +22,15 @@ const DetailCar = () => {
     }, []);
 
     const props = {
-        navList
+        navList,
+        disableForm
     }
 
     return (
         <>
             <Navbar {...props} />
             <Banner />
-            <SearchBar />
+            <SearchBar {...props} />
             <Container>
                 <Row>
                 {
