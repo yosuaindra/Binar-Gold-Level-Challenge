@@ -1,6 +1,7 @@
 import { Container, Row } from 'reactstrap';
 import './style.scss';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link as LinkScroll } from "react-scroll";
+import { Link as LinkHome } from "react-router-dom";
 
 const Navbar = ({navList}) => {
     return (
@@ -8,11 +9,13 @@ const Navbar = ({navList}) => {
             <Container>
                 <Row>
                     <div className='wrapper d-flex justify-content-between align-items-center'>
-                        <div className='logo'></div>
+                        <LinkHome to='/'>
+                            <div className='logo'></div>
+                        </LinkHome>
                         <nav className='d-none d-lg-flex justify-content-between'>
                             {
                                 navList.map((item) => (
-                                    <Link to={item.url} offset={-70}>{item.title}</Link>
+                                    <LinkScroll to={item.url} offset={-70}>{item.title}</LinkScroll>
                                 ))
                             }
                         </nav>

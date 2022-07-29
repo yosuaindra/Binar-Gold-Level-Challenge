@@ -8,6 +8,7 @@ import axios from 'axios';
 import CardCar from '../../components/CardCar';
 import { Card, Col, Container, Row } from 'reactstrap';
 import { useParams } from "react-router-dom";
+import CarDetail from '../../components/CarDetail';
 
 const DetailCar = () => {
     const disableForm = true;
@@ -23,7 +24,8 @@ const DetailCar = () => {
 
     const props = {
         navList,
-        disableForm
+        disableForm,
+        car
     }
 
     return (
@@ -31,19 +33,7 @@ const DetailCar = () => {
             <Navbar {...props} />
             <Banner />
             <SearchBar {...props} />
-            <Container>
-                <Row>
-                {
-                    !!Object.keys(car).length && (
-                        <>
-                            <img src={!!car.image ? car.image : 'http://assets.stickpng.com/images/59db69d33752880e93e16efc.png'} className='w-50'/>
-                            <h1>detail mobil {car.name}</h1>
-                            <h2>{car.category}</h2>
-                        </>
-                    )
-                }
-                </Row>
-            </Container>
+            <CarDetail {...props} />
             <Footer />
         </>
     );

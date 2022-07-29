@@ -1,5 +1,6 @@
 import { Container, Row } from 'reactstrap';
 import './style.scss';
+import { Link as LinkHome } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -46,7 +47,9 @@ const Footer = () => {
                             <div className='title'>
                                 <h3>Copyright Binar 2022</h3>
                             </div>
-                            <div className='logo-footer'></div>
+                            <LinkHome to='/'>
+                                <div className='logo-footer'></div>
+                            </LinkHome>
                         </div>
                     </div>
                 </Row>

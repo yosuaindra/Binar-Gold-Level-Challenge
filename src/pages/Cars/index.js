@@ -12,18 +12,13 @@ const Cars = () => {
     const [name, setName] = useState("");
     const [status, setStatus] = useState("");
     const [button, setButton] = useState(false);
+    const [error, serError] = useState([]);
 
     useEffect(() => {
         axios.get('https://bootcamp-rent-car.herokuapp.com/admin/car')
         .then((res) => setData(res.data))
         .catch((err) => console.log(err));
     }, []);
-
-    // contoh asynchronous
-    // useEffect(async() => {
-    //     const res = await axios.get('https://bootcamp-rent-car.herokuapp.com/admin/car');
-    //     console.log(res);
-    // });
 
     const handleChangeName = (e) =>{
         setName(e.target.value);
@@ -34,21 +29,17 @@ const Cars = () => {
     }
 
     const handleSearch = () =>{
-        // const payload = {
-        //     name: name
-        // }
+        if(!!name){
+            const newArr = data.filter(e => (
+                e.name === name || e.status === status
+            ));
+            setData(newArr);
+            console.log(newArr);
         
-        // axios.post('https://bootcamp-rent-car.herokuapp.com/admin/car', payload)
-        //     .then((res) => console.log(res.data))
-        //     .catch((err) => console.log(err));
-
-        const newArr = data.filter(e => (
-            e.name === name || e.status === status
-        ));
-        
-        setData(newArr);
-        // console.log(newArr);
-        setButton(true);
+            setButton(true);
+        }else{
+            serError();
+        }
     }
 
     const props = {
