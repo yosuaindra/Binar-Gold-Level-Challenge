@@ -11,11 +11,12 @@ const SearchBar = (props) => {
         handleChangeCategory,
         disableForm,
         handleFocusInput,
-        button
+        button,
+        bgOverlay
     } = props;
     
     return (
-        <section id='searchbar'>
+        <section id='searchbar' searchbar={ !bgOverlay ? 'false' : 'true' }>
             <Container>
                 <div className='search-wrapper'>
                     <div className={!!disableForm || !!button === true ? "search-title" : "d-none"}>

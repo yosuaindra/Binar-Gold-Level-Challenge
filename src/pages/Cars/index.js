@@ -57,10 +57,16 @@ const Cars = () => {
         }
         setFdata(newArr);
         setButton(true);
+        if(!!bgOverlay){
+            setBgOverlay(!bgOverlay);
+        }
     }
 
     const handleEditSearch = () =>{
         setButton(false);
+        if(!!bgOverlay){
+            setBgOverlay(!bgOverlay);
+        }
     }
 
     const formatRupiah = (angka) =>{
@@ -85,7 +91,8 @@ const Cars = () => {
         handleSearch,
         handleEditSearch,
         formatRupiah,
-        handleFocusInput
+        handleFocusInput,
+        bgOverlay
     }
 
     return (
