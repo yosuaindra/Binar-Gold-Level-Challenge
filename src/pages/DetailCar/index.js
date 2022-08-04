@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import CarDetail from '../../components/CarDetail';
 
 const DetailCar = () => {
+    const bannerContent = false;
     const disableForm = true;
     const [car, setCar] = useState({});
 
@@ -30,6 +31,7 @@ const DetailCar = () => {
 
     const props = {
         navList,
+        bannerContent,
         disableForm,
         car,
         formatRupiah

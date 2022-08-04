@@ -9,9 +9,11 @@ import FAQ from '../../components/FAQ';
 import { navList, serviceList, cardWhyUs, testimonial } from '../../const/staticData';
 
 const Home = () => {
+    const bannerContent = true;
     const showCTA = true;
     const props = {
         navList,
+        bannerContent,
         serviceList,
         cardWhyUs,
         testimonial,

@@ -10,6 +10,7 @@ import NotFound from '../../components/NotFound';
 import BackgroundOverlay from '../../components/BackgroundOverlay';
 
 const Cars = () => {
+    const bannerContent = false;
     const [data, setData] = useState([]);
     const [name, setName] = useState("");
     const [category, setCategory] = useState("2 - 4 orang");
@@ -83,6 +84,7 @@ const Cars = () => {
 
     const props = {
         navList,
+        bannerContent,
         data,
         fdata,
         button,
