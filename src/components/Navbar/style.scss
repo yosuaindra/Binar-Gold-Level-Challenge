@@ -18,6 +18,9 @@ header{
             }
             nav{
                 transform: translateX(0);
+                .close{
+                    display: flex;
+                }
             }
         }
     }
@@ -58,9 +61,9 @@ header{
                 transform: translateX(100%);
             }
             .close{
+                display: none;
                 z-index: 99999;
                 height: 70px;
-                display: flex;
                 justify-content: space-between;
                 align-items: center;
                 strong{
