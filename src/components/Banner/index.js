@@ -9,7 +9,7 @@ const Banner = (props) => {
         <section id='banner'>
             <Container>
                 <Row>
-                    <div className={'wrapper col-12 col-lg-6 d-flex flex-column justify-content-lg-center' + (!bannerContent ? ' banner' : '')}>
+                    <div className={`wrapper col-12 col-lg-6 d-flex flex-column justify-content-lg-center ${!bannerContent ? ' banner' : ''}`}>
                         {
                             !!bannerContent && (
                                 <>
