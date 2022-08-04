@@ -84,6 +84,10 @@ const Cars = () => {
         }
     }
 
+    const handleFocusBgOverlay = () =>{        
+        setBgOverlay(!bgOverlay);
+    }
+
     const props = {
         navList,
         bannerContent,
@@ -96,6 +100,7 @@ const Cars = () => {
         handleEditSearch,
         formatRupiah,
         handleFocusInput,
+        handleFocusBgOverlay,
         bgOverlay
     }
 

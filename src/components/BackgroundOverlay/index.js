@@ -1,11 +1,11 @@
 import './style.scss';
 
 const BackgroundOverlay = (props) => {
-    const {handleFocusInput} = props;
+    const {handleFocusBgOverlay} = props;
 
     return (
         <>
-            <div className='bg-overlay' onClick={handleFocusInput}></div>
+            <div className='bg-overlay' onClick={handleFocusBgOverlay}></div>
         </>
     );
 }
