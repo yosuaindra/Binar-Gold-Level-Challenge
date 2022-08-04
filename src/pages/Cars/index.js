@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import CarList from '../../components/CarList';
 import NotFound from '../../components/NotFound';
+import BackgroundOverlay from '../../components/BackgroundOverlay';
 
 const Cars = () => {
     const [data, setData] = useState([]);
@@ -14,7 +15,8 @@ const Cars = () => {
     const [category, setCategory] = useState("2 - 4 orang");
     const [button, setButton] = useState(false);
     const [fdata, setFdata] = useState([]);
-    const [notFound, setNotFound] = useState(false)
+    const [notFound, setNotFound] = useState(false);
+    const [bgOverlay, setBgOverlay] = useState(false);
 
     useEffect(() => {
         axios.get('https://bootcamp-rent-car.herokuapp.com/admin/car')
@@ -69,6 +71,10 @@ const Cars = () => {
         return result;
     }
 
+    const handleFocusInput = () =>{
+        setBgOverlay(!bgOverlay);
+    }
+
     const props = {
         navList,
         data,
@@ -78,11 +84,13 @@ const Cars = () => {
         handleChangeCategory,
         handleSearch,
         handleEditSearch,
-        formatRupiah
+        formatRupiah,
+        handleFocusInput
     }
 
     return (
         <>
+            {!!bgOverlay ? <BackgroundOverlay {...props} /> : ''}
             <Navbar {...props} />
             <Banner />
             <SearchBar {...props} />

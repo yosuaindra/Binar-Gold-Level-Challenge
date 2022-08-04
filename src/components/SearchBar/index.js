@@ -2,7 +2,17 @@ import './style.scss';
 import { Container, Label, Input, Button } from 'reactstrap';
 
 const SearchBar = (props) => {
-    const {name, category, handleChangeName, handleSearch, handleStatus, handleEditSearch, handleChangeCategory,  disableForm, button} = props;
+    const {
+        name, 
+        category, 
+        handleChangeName, 
+        handleSearch,
+        handleEditSearch, 
+        handleChangeCategory,
+        disableForm,
+        handleFocusInput,
+        button
+    } = props;
     
     return (
         <section id='searchbar'>
@@ -21,6 +31,7 @@ const SearchBar = (props) => {
                                     id="namaMobil"
                                     placeholder="Ketik nama/tipe mobil"
                                     defaultValue={name}
+                                    onFocus={handleFocusInput}
                                     onChange={(e) => handleChangeName(e)}
                                     disabled={!!disableForm || !!button === true ? 'disabled' : ''}
                                 />
@@ -35,6 +46,7 @@ const SearchBar = (props) => {
                                     id="kategoriMobil"
                                     type="select"
                                     defaultValue={category}
+                                    onFocus={handleFocusInput}
                                     onChange={(e) => handleChangeCategory(e)}
                                     disabled={!!disableForm || !!button === true ? 'disabled' : ''}
                                 >
