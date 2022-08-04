@@ -2,7 +2,7 @@ import './style.scss';
 import { Container, Label, Input, Button } from 'reactstrap';
 
 const SearchBar = (props) => {
-    const {handleChangeName, handleSearch, handleStatus,  disableForm, button} = props;
+    const {name, category, handleChangeName, handleSearch, handleStatus, handleEditSearch, handleChangeCategory,  disableForm, button} = props;
     
     return (
         <section id='searchbar'>
@@ -19,8 +19,8 @@ const SearchBar = (props) => {
                                 </Label>
                                 <Input
                                     id="namaMobil"
-                                    name="name"
                                     placeholder="Ketik nama/tipe mobil"
+                                    defaultValue={name}
                                     onChange={(e) => handleChangeName(e)}
                                     disabled={!!disableForm || !!button === true ? 'disabled' : ''}
                                 />
@@ -33,18 +33,19 @@ const SearchBar = (props) => {
                                 </Label>
                                 <Input
                                     id="kategoriMobil"
-                                    name="category"
                                     type="select"
-                                    disabled
+                                    defaultValue={category}
+                                    onChange={(e) => handleChangeCategory(e)}
+                                    disabled={!!disableForm || !!button === true ? 'disabled' : ''}
                                 >
                                     <option>
-                                        Masukan Kapasitas Mobil
+                                        2 - 4 orang
                                     </option>
                                     <option>
-                                        1
+                                        4 - 6 orang
                                     </option>
                                     <option>
-                                        2
+                                        6 - 8 orang
                                     </option>
                                 </Input>
                             </div>
@@ -60,15 +61,18 @@ const SearchBar = (props) => {
                                     type="select"
                                     disabled
                                 >
-                                    <option>
+                                    {/* <option>
                                         Masukan Harga Sewa per Hari
                                     </option>
                                     <option>
-                                        1
+                                        < Rp. 400.000
                                     </option>
                                     <option>
-                                        2
+                                        Rp. 400.000 - Rp. 600.000
                                     </option>
+                                    <option>
+                                        > Rp. 600.000
+                                    </option> */}
                                 </Input>
                             </div>
                         </div>
@@ -81,21 +85,20 @@ const SearchBar = (props) => {
                                     id="statusMobil"
                                     name="status"
                                     type="select"
-                                    onChange={(e) => handleStatus(e)}
-                                    disabled={!!disableForm || !!button === true ? 'disabled' : ''}
+                                    disabled
                                 >
-                                    <option value={true}>
+                                    {/* <option value={true}>
                                         True
                                     </option>
                                     <option value={false}>
                                         False
-                                    </option>
+                                    </option> */}
                                 </Input>
                             </div>
                         </div>
                         <div className={!!disableForm ? 'd-lg-none' : ''}>
                             <div className='search-button'>
-                                <Button className={(!!button === true) ? 'btn-edit' : 'btn-success'} onClick={handleSearch}>
+                                <Button className={(!!button === true) ? 'btn-edit' : 'btn-success'} onClick={(!!button === true) ? handleEditSearch : handleSearch}>
                                     {(!!button === true) ? 'Edit' : 'Cari Mobil'}
                                 </Button>
                             </div>

@@ -3,6 +3,23 @@ header{
     z-index: 100;
     width: 100%;
     background-color: #F1F3FF;
+    &[sidebar = true]{
+        position: inherit;
+        height: 100%;
+        .wrapper{
+            display: inline-flex !important;
+            nav{
+                display: block !important;
+                position: absolute;
+                z-index: 200;
+                width: 50%;
+                right: 0;
+                height: 100vh;
+                flex-direction: column;
+                background-color: aqua;
+            }
+        }
+    }
     .wrapper{
         height: 70px;
         .logo{

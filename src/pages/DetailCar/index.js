@@ -5,8 +5,6 @@ import { navList } from '../../const/staticData';
 import SearchBar from '../../components/SearchBar';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import CardCar from '../../components/CardCar';
-import { Card, Col, Container, Row } from 'reactstrap';
 import { useParams } from "react-router-dom";
 import CarDetail from '../../components/CarDetail';
 
@@ -22,10 +20,19 @@ const DetailCar = () => {
         .catch((err) => console.log(err));
     }, []);
 
+    const formatRupiah = (angka) =>{
+        let	original = angka.toString().split('').reverse().join(''),
+        result 	= original.match(/\d{1,3}/g);
+        result	= result.join('.').split('').reverse().join('');
+
+        return result;
+    }
+
     const props = {
         navList,
         disableForm,
-        car
+        car,
+        formatRupiah
     }
 
     return (

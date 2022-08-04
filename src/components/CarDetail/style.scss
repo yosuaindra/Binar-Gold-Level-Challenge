@@ -1,5 +1,6 @@
 section#cardetail{
     margin-top: 30px;
+    position: relative;
     .wrapper{
         .desc{
             .wrapper{
@@ -108,6 +109,14 @@ section#cardetail{
                     }
                 }
             }
+        }
+    }
+    .btn-back{
+        position: sticky;
+        bottom: 5px;
+        button{
+            font-weight: 400;
+            font-size: 12px;
         }
     }
 }

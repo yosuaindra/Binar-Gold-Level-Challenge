@@ -2,10 +2,18 @@ import { Container, Row } from 'reactstrap';
 import './style.scss';
 import { Link as LinkScroll } from "react-scroll";
 import { Link as LinkHome } from "react-router-dom";
+import { useState } from 'react';
 
 const Navbar = ({navList}) => {
+    const [showSideBar, setShowSideBar] = useState(false);
+
+    const handleSideBar = () =>{
+        console.log('sideBar ganti');
+        setShowSideBar(!showSideBar);
+    }
+
     return (
-        <header>
+        <header id='navbar' sidebar={ !showSideBar ? 'false' : 'true' }>
             <Container>
                 <Row>
                     <div className='wrapper d-flex justify-content-between align-items-center'>
@@ -19,7 +27,7 @@ const Navbar = ({navList}) => {
                                 ))
                             }
                         </nav>
-                        <div className='hamburger-menu d-flex d-lg-none flex-column justify-content-between'>
+                        <div className='hamburger-menu d-flex d-lg-none flex-column justify-content-between' onClick={handleSideBar}>
                             <span />
                             <span />
                             <span />

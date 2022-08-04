@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import { Container, Row, UncontrolledAccordion, AccordionItem, AccordionHeader, AccordionBody } from 'reactstrap';
 import './style.scss';
 
-const CarDetail = ({car}) => {
+const CarDetail = (props) => {
+    const {car, formatRupiah} = props;
     return (
         <section id='cardetail'>
             <Container>
@@ -60,13 +62,20 @@ const CarDetail = ({car}) => {
                                             <p className='car-category'><i className='fa-solid fa-user-group'></i> {!!car.category ? car.category : 'Kategori'}</p>
                                             <div className="car-price">
                                                 <p>Total</p>
-                                                <p>Rp {!!car.price ? car.price : '0'}</p>
+                                                <p>Rp {formatRupiah(!!car.price ? car.price : 0)}</p>
                                             </div>
                                         </>
                                     )
                                 }
                             </div>
                         </div>
+                    </div>
+                    <div className='btn-back d-flex justify-content-center mt-4'>
+                        <Link to='/carimobil'>
+                            <button className='btn btn-primary'>
+                                <i className="fa-solid fa-arrow-left-long"></i> Back to Car List
+                            </button>
+                        </Link>
                     </div>
                 </Row>
             </Container>
