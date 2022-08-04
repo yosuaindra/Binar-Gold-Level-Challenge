@@ -79,7 +79,9 @@ const Cars = () => {
     }
 
     const handleFocusInput = () =>{
-        setBgOverlay(!bgOverlay);
+        if(!bgOverlay){
+            setBgOverlay(!bgOverlay);
+        }
     }
 
     const props = {
