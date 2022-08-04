@@ -8,7 +8,6 @@ const Navbar = ({navList}) => {
     const [showSideBar, setShowSideBar] = useState(false);
 
     const handleSideBar = () =>{
-        console.log('sideBar ganti');
         setShowSideBar(!showSideBar);
     }
 
@@ -20,10 +19,14 @@ const Navbar = ({navList}) => {
                         <LinkHome to='/'>
                             <div className='logo'></div>
                         </LinkHome>
-                        <nav className='d-none d-lg-flex justify-content-between'>
+                        <nav className='d-lg-flex justify-content-between'>
+                            <div className='close'>
+                                <strong>BCR</strong>
+                                <i className='fa-solid fa-x' onClick={handleSideBar}></i>
+                            </div>
                             {
                                 navList.map((item) => (
-                                    <LinkScroll to={item.url} offset={-70}>{item.title}</LinkScroll>
+                                    <LinkScroll to={item.url} offset={-70} onClick={handleSideBar}>{item.title}</LinkScroll>
                                 ))
                             }
                         </nav>
