@@ -2,24 +2,26 @@ import logoThumb from '../assets/images/thumb.svg';
 import logoPriceTag from '../assets/images/pricetag.svg';
 import logoDate from '../assets/images/date.svg';
 import logoBadge from '../assets/images/badge.svg';
+import user1 from '../assets/images/user1.png'
+import user2 from '../assets/images/user2.png'
 
 // Global
 const navList = [
     {
         title: 'Our Services',
-        url: 'ourservices'
+        url: '/#ourservices'
     },
     {
         title: 'Why Us',
-        url: 'whyus'
+        url: '/#whyus'
     },
     {
         title: 'Testimonial',
-        url: 'testimonial'
+        url: '/#testimonial'
     },
     {
         title: 'FAQ',
-        url: 'faq'
+        url: '/#faq'
     }
 ];
 
@@ -60,7 +62,7 @@ const cardWhyUs = [
 const testimonial = [
     {
         user: {
-            avatar: 'https://cdn.discordapp.com/attachments/986612883859341333/997421101493780590/unknown.png',
+            avatar: user1,
             name: 'John Doe',
             age: 32,
             address: 'Bromo'
@@ -70,7 +72,7 @@ const testimonial = [
     },
     {
         user: {
-            avatar: 'https://cdn.discordapp.com/attachments/986612883859341333/997421148054753320/unknown.png',
+            avatar: user2,
             name: 'Jane Doe',
             age: 20,
             address: 'Bali'
@@ -80,7 +82,7 @@ const testimonial = [
     },
     {
         user: {
-            avatar: 'https://cdn.discordapp.com/attachments/986612883859341333/997421101493780590/unknown.png',
+            avatar: user1,
             name: 'Jimmy Doe',
             age: 27,
             address: 'Tangerang'
@@ -90,7 +92,7 @@ const testimonial = [
     },
     {
         user: {
-            avatar: 'https://cdn.discordapp.com/attachments/986612883859341333/997421148054753320/unknown.png',
+            avatar: user2,
             name: 'Vallen Doe',
             age: 22,
             address: 'Bandung'
@@ -100,4 +102,28 @@ const testimonial = [
     }
 ];
 
-export{navList, serviceList, cardWhyUs, testimonial}
+// Component Home - FAQ
+const faq = [
+    {
+        question: 'Apa saja syarat yang dibutuhkan?',
+        answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+    },
+    {
+        question: 'Berapa hari minimal sewa mobil lepas kunci?',
+        answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+    },
+    {
+        question: 'Berapa hari sebelumnya sabaiknya booking sewa mobil?',
+        answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+    },
+    {
+        question: 'Apakah Ada biaya antar-jemput?',
+        answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+    },
+    {
+        question: 'Bagaimana jika terjadi kecelakaan',
+        answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+    }
+];
+
+export{navList, serviceList, cardWhyUs, testimonial, faq}

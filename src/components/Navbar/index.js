@@ -26,7 +26,8 @@ const Navbar = ({navList}) => {
                             </div>
                             {
                                 navList.map((item) => (
-                                    <LinkScroll to={item.url} offset={-70} onClick={handleSideBar}>{item.title}</LinkScroll>
+                                    // <LinkScroll to={item.url} offset={-70} onClick={handleSideBar}>{item.title}</LinkScroll>
+                                    <a href={item.url} offset={-70} onClick={handleSideBar}>{item.title}</a>
                                 ))
                             }
                         </nav>

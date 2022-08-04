@@ -3,23 +3,25 @@ header{
     z-index: 100;
     width: 100%;
     background-color: #F1F3FF;
-    &[sidebar = true]{
-        .wrapper{
-            &::before{
-                content: '';
-                position: fixed;
-                height: 100%;
-                width: 100%;
-                background: rgba(0, 0, 0, 0.6);
-                top: 0;
-                left: 0;
-                z-index: 100;
-                transition: all 0.5s;
-            }
-            nav{
-                transform: translateX(0);
-                .close{
-                    display: flex;
+    @media (max-width: 991.98px) {
+        &[sidebar = true]{
+            .wrapper{
+                &::before{
+                    content: '';
+                    position: fixed;
+                    height: 100%;
+                    width: 100%;
+                    background: rgba(0, 0, 0, 0.6);
+                    top: 0;
+                    left: 0;
+                    z-index: 100;
+                    transition: all 0.5s;
+                }
+                nav{
+                    transform: translateX(0);
+                    .close{
+                        display: flex;
+                    }
                 }
             }
         }

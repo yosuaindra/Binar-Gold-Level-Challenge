@@ -6,7 +6,7 @@ import WhyUs from '../../components/WhyUs';
 import Testimonial from '../../components/Testimonial';
 import Marketing from '../../components/Marketing';
 import FAQ from '../../components/FAQ';
-import { navList, serviceList, cardWhyUs, testimonial } from '../../const/staticData';
+import { navList, serviceList, cardWhyUs, testimonial, faq } from '../../const/staticData';
 
 const Home = () => {
     const bannerContent = true;
@@ -17,6 +17,7 @@ const Home = () => {
         serviceList,
         cardWhyUs,
         testimonial,
+        faq,
         showCTA
     }
 
@@ -28,7 +29,7 @@ const Home = () => {
             <WhyUs {...props} />
             <Testimonial {...props} />
             <Marketing />
-            <FAQ />
+            <FAQ {...props} />
             <Footer />
         </>
     );

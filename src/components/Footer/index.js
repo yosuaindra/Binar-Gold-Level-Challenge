@@ -15,10 +15,10 @@ const Footer = () => {
                         </div>
                         <div className='sitemap col-12 col-lg-3 d-flex justify-content-lg-center'>
                             <div className='d-flex flex-column justify-content-between'>
-                                <a>Our services</a>
-                                <a>Why Us</a>
-                                <a>Testimonial</a>
-                                <a>FAQ</a>
+                                <a href='/#ourservices'>Our services</a>
+                                <a href='/#whyus'>Why Us</a>
+                                <a href='/#testimonial'>Testimonial</a>
+                                <a href='/#faq'>FAQ</a>
                             </div>
                         </div>
                         <div className='social-media col-12 col-lg-3 d-flex flex-column'>
